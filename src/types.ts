@@ -1,105 +1,96 @@
 import {
-  text,
   nat64,
   Vec,
   Opt,
   Record
 } from "azle";
 
-export const ClientId = text;
-export const LawyerId = text;
-export const CaseId = text;
-export const WitnessId = text;
+//   export type ClientId = string;
+//   export type LawyerId = string;
+//   export type CaseId = string;
+//   export type WitnessId = string;
 
-export const Client = Record({
-  id: ClientId,
-  Name: text,
-  Surname: text,
-  Phonenumber: text,
-  Email: text,
-  Gender: text,
+export type Client = Record<{
+  id: string,
+  Name: string,
+  Surname: string,
+  Phonenumber: string,
+  Email: string,
+  Gender: string,
   Date_Of_Birth: nat64,
-  Occupation: text,
-  Marital_Status: text,
-  Nationality: text,
+  Occupation: string,
+  Marital_Status: string,
+  Nationality: string,
   datJoined: nat64,
-});
-export type Client = typeof Client;
+}>;
 
-export const ClientPayload = Record({
-  Name: text,
-  Surname: text,
-  Phonenumber: text,
-  Email: text,
-  Gender: text,
-  Occupation: text,
-  Marital_Status: text,
-  Nationality: text,
-});
-export type ClientPayload = typeof ClientPayload;
+export type ClientPayload = Record<{
+  Name: string,
+  Surname: string,
+  Phonenumber: string,
+  Email: string,
+  Gender: string,
+  Occupation: string,
+  Marital_Status: string,
+  Nationality: string,
+}>;
 
-export const Lawyer = Record({
-  id: LawyerId,
-  Title: text,
-  Name: text,
-  Surname: text,
-  Phonenumber: text,
-  Email: text,
-  Case_Category: text,
+export type Lawyer = Record<{
+  id: string,
+  Title: string,
+  Name: string,
+  Surname: string,
+  Phonenumber: string,
+  Email: string,
+  Case_Category: string,
   Case_Won: nat64,
   Case_Lost: nat64,
-  Experience: text,
-  Nationality: text,
+  Experience: string,
+  Nationality: string,
   createdAt: nat64,
-});
-export type Lawyer = typeof Lawyer;
+}>;
 
-export const LawyerPayload = Record({
-  Title: text,
-  Name: text,
-  Surname: text,
-  Phonenumber: text,
-  Email: text,
-  Case_Category: text,
-  Experience: text,
-  Nationality: text,
-});
-export type LawyerPayload = typeof LawyerPayload;
+export type LawyerPayload = Record<{
+  Title: string,
+  Name: string,
+  Surname: string,
+  Phonenumber: string,
+  Email: string,
+  Case_Category: string,
+  Experience: string,
+  Nationality: string,
+}>;
 
-export const Case = Record({
-  id: CaseId,
-  Case_name: text,
+export type Case = Record<{
+  id: string,
+  Case_name: string,
   CreatedAt: nat64,
-  UpdatedAt: Opt(nat64),
-  Description: text,
-  Documents: Vec(text),
-  Timeline: text,
-  State: text,
-  LawyerId: text,
-  ClientId: text,
-  WitnessIds: Opt(Vec(WitnessId)),
-});
-export type Case = typeof Case;
+  UpdatedAt: Opt<nat64>,
+  Description: string,
+  Documents: Vec<string>,
+  Timeline: string,
+  State: string,
+  LawyerId: string,
+  ClientId: string,
+  WitnessIds: Opt<Vec<string>>,
+}>;
 
-export const CasePayload = Record({
-  Case_name: text,
-  Description: text,
-  Documents: Vec(text),
-  Timeline: text,
-});
-export type CasePayload = typeof CasePayload;
+export type CasePayload = Record<{
+  Case_name: string,
+  Description: string,
+  Documents: Vec<string>,
+  Timeline: string,
+}>;
 
-export const Witness = Record({
-  id: WitnessId,
-  Fullname: text,
-  national_id: text,
-  Testimony: text,
-});
-export type Witness = typeof Witness;
+export type Witness = Record<{
+  id: string,
+  Fullname: string,
+  national_id: string,
+  Testimony: string,
+}>;
 
-export const WitnessPayload = Record({
-  Fullname: text,
-  national_id: text,
-  Testimony: text,
-});
-export type WitnessPayload = typeof WitnessPayload;
+export type WitnessPayload = Record<{
+  Fullname: string,
+  national_id: string,
+  Testimony: string,
+}>;
